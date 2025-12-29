@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ruleset name="Contributte">
+	<rule ref="./vendor/contributte/qa/ruleset-8.2.xml">
+		<!-- Exclude rules that conflict with legacy codebase -->
+		<exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+		<exclude name="Squiz.Classes.ClassFileName.NoMatch"/>
+		<exclude name="Squiz.Classes.ValidClassName.NotCamelCaps"/>
+		<exclude name="SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing"/>
+		<exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint"/>
+		<exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint"/>
+		<exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingAnyTypeHint"/>
+		<exclude name="SlevomatCodingStandard.Functions.StaticClosure.ClosureNotStatic"/>
+		<exclude name="PSR2.Classes.PropertyDeclaration.VarUsed"/>
+		<exclude name="PSR2.Classes.PropertyDeclaration.ScopeMissing"/>
+		<exclude name="Squiz.Commenting.VariableComment.WrongStyle"/>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingReturn"/>
+		<exclude name="SlevomatCodingStandard.Classes.ModernClassNameReference.ClassNameReferencedViaFunctionCall"/>
+		<!-- Allow snake_case test methods -->
+		<exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+		<exclude name="Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps"/>
+		<!-- Allow double quoted strings with variables -->
+		<exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
+	</rule>
+
+	<!-- Legacy src files are excluded from strict formatting checks -->
+	<exclude-pattern>src/*</exclude-pattern>
+
+	<exclude-pattern>/tests/tmp</exclude-pattern>
+</ruleset>
