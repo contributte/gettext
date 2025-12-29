@@ -1,0 +1,25 @@
+includes:
+	- vendor/contributte/phpstan/phpstan.neon
+
+parameters:
+	level: 2
+	phpVersion: 80200
+
+	scanDirectories:
+		- src
+
+	fileExtensions:
+		- php
+
+	paths:
+		- src
+
+	ignoreErrors:
+		# Legacy PHPDoc format doesn't use $ prefix
+		- '#PHPDoc tag @param has invalid value#'
+		# Legacy code uses invalid return types
+		- '#has invalid return type#'
+		# Legacy comparison issues
+		- '#Comparison operation .+ results in an error#'
+		# Legacy code doesn't call parent constructors in some cases
+		- '#does not call parent constructor from#'
